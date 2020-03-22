@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- <script src="https://code.highcharts.com/modules/series-label.js"></script> -->
+
+    <script type="text/javascript" src="{{ url_for('static', filename='directional_chart.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='date_loader.js') }}"></script>
+
+    <style>
+      .values {
+        font-size:30px;
+        color:#404040;
+
+      }
+      table {
+      width: 100%;
+       margin-left:auto;
+       margin-right:auto;
+     }
+      td {
+        vertical-align: top;
+        width: 50%;
+        /* background-color:#ffffff; */
+        /* border: 1px solid black; */
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color:#f9f9f9f9;
+      }
+      tr {
+        hover:#f5f5f5;
+      }
+    </style>
+
+  </head>
+  <body>
+
+
+  </head>
+  <body>
+
+
+<!-- <img src="{{url_for('static', filename='applied_qed_logo.png')}}" width="100px" /> -->
+
+  <p>
+    Date: <input type="date" id="datepicker">
+    <br>
+    <br>
+    <input type="radio" name="type_toggle" id="type_toggle" value="1" checked> Directional
+    <input type="radio" name="type_toggle" id="type_toggle2" value="2"> Non-Directional
+  </p>
+
+
+  <table>
+    <tr>
+      <td style="text-align:right;">
+        <span id="total_visitors" class="values"></span> TOTAL CUSTOMERS
+      </td>
+      <td style="text-align:left;">
+        <span id="average_dwell_probable" class="values"></span> MINUTES <span id="dwell_type"></span>  AVERAGE DWELL TIME
+        <br>
+        <span id="average_dwell_expected" class="values"></span><span id="dwell_type_expected"></span>
+        <br>
+        <span id="average_dwell_min" class="values"></span><span id="dwell_type_min"></span>
+        <br>
+        <span id="average_dwell_max" class="values"></span><span id="dwell_type_max"></span>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+
+
+
+    <div id="n_chart"></div>
+
+  </body>
+</html>
